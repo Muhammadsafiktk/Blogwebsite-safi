@@ -1,0 +1,314 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Hide scrollbar but keep scroll functionality */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+.largebox {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.header {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.maincards {
+    width: 100%;
+    max-width: 1200px;
+    border: 5px solid gray;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 10px auto;
+    background-color: rgba(128, 128, 128, 0.968);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card1 {
+    border: 3px solid black;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 310px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.image1 {
+    overflow: hidden;
+    width: 100%;
+}
+
+.image1 > img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.centercards {
+    margin-top: 12px;
+    padding: 0 10px;
+    font-size: 11px;
+    flex-grow: 1;
+}
+
+.centercards h1 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+}
+
+.centercards p {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    color: #333;
+}
+
+.bosscard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 8px 10px 12px;
+    margin-top: auto;
+}
+
+.hilal {
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hilal img {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.cardendcontent {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 65px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.chacha {
+    font-size: 12px;
+}
+
+.cardbutton {
+    margin-left: auto;
+}
+
+.cardbutton button {
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.cardbutton button:hover {
+    background: #555;
+}
+
+/* ========== FOOTER (Row Layout) ========== */
+.footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 20px;
+    padding: 20px 25px;
+    background: #1a1a1a;
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-left {
+    flex: 1;
+    text-align: left;
+}
+
+.footer-left h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.footer-left .email {
+    font-size: 0.95rem;
+}
+
+.footer-left .email a {
+    color: #4fc3f7;
+    text-decoration: none;
+}
+
+.footer-left .email a:hover {
+    text-decoration: underline;
+}
+
+.footer-right {
+    flex-shrink: 0;
+}
+
+.footer .map-container {
+    width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #444;
+}
+
+.footer .map-container iframe {
+    width: 100%;
+    height: 180px;
+    border: 0;
+    display: block;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet - 2 columns */
+@media (max-width: 992px) {
+    .maincards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.7rem;
+    }
+
+    .footer {
+        gap: 20px;
+        padding: 18px 20px;
+    }
+
+    .footer .map-container {
+        width: 280px;
+    }
+
+    .footer .map-container iframe {
+        height: 160px;
+    }
+}
+
+/* Mobile - 1 column + footer stacks */
+@media (max-width: 700px) {
+    .maincards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 8px;
+        border-width: 3px;
+    }
+
+    .card1 {
+        min-height: auto;
+    }
+
+    .image1 > img {
+        height: 180px;
+    }
+
+    .centercards h1 {
+        font-size: 1.2rem;
+    }
+
+    .centercards p {
+        font-size: 0.9rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 18px;
+        padding: 20px 15px;
+    }
+
+    .footer-left {
+        text-align: center;
+    }
+
+    .footer .map-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .footer .map-container iframe {
+        height: 200px;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+    .cardendcontent {
+        left: 58px;
+    }
+
+    .hilal img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .chacha {
+        font-size: 11px;
+    }
+}
